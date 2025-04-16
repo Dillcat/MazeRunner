@@ -1,8 +1,6 @@
 from tkinter import Tk, BOTH, Canvas
 import tkinter as tk
 
-
-
 class Window():
     def __init__(self, width, height):
         self.__root = Tk()
@@ -11,13 +9,6 @@ class Window():
         self.__canvas = Canvas(self.__root, bg="white", height=height, width=width)
         self.__canvas.pack(fill=BOTH, expand=1)
         self.__running = False
-
-
-    def draw_line(self, line, fill_color):
-            line.draw(self.__canvas, fill_color)
-        
-
-
 
     def redraw(self):
         self.__root.update_idletasks()
@@ -28,6 +19,9 @@ class Window():
         while self.__running:
             self.redraw()
         print("window closed...")
+
+    def draw_line(self, line, fill_color="black"):
+        line.draw(self.__canvas, fill_color)
 
     def close(self):
         self.__running = False
@@ -46,4 +40,4 @@ class Line():
         canvas.create_line(
             self.p1.x, self.p1.y, self.p2.x, self.p2.y, fill=fill_color, width=2
         )
-        
+
