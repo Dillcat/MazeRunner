@@ -70,9 +70,9 @@ class Maze:
             return
         self._win.redraw()
         if self._num_cols < 5 or self._num_rows < 5: 
-            time.sleep(0.001)
+            time.sleep(0.0000001)
         else:
-            time.sleep(0.001)
+            time.sleep(0.0000001)
         
 
 

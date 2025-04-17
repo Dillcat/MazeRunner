@@ -14,18 +14,18 @@ def main():
 
     #c1.draw_move(c2)
 
-    num_rows = 12
-    num_cols = 16
+    num_rows = 100
+    num_cols = 160
     margin = 50
-    screen_x = 800
-    screen_y = 600
+    screen_x = 1600
+    screen_y = 1000
     win = Window(screen_x, screen_y)
     cell_size_x = (screen_x - 2 * margin) / num_cols
     cell_size_y = (screen_y - 2 * margin) / num_rows
 
     sys.setrecursionlimit(10000)
 
-    m1 = Maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win, 10)
+    m1 = Maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win, 9)
     
     print("prepare to be aMAZEd!")
     is_solvable = m1.solve()
