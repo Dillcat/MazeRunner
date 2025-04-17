@@ -1,5 +1,6 @@
 from window import Window
 from maze import Maze
+import sys
 
 def main():
 
@@ -22,8 +23,17 @@ def main():
     cell_size_x = (screen_x - 2 * margin) / num_cols
     cell_size_y = (screen_y - 2 * margin) / num_rows
 
-    m1 = Maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win)
+    sys.setrecursionlimit(10000)
+
+    m1 = Maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win, 10)
     
+    print("prepare to be aMAZEd!")
+    is_solvable = m1.solve()
+    if not is_solvable:
+        print("this isn't so aMAZEing...")
+    else:
+        print("we MAZEd it!")
+
     #test
     #mt = Maze(10, 10, 3, 3, 100, 100, win)
     
